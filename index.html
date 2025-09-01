@@ -1,0 +1,252 @@
+<html>
+<head>
+<style>
+h1 {
+  font-size: 70px;
+    text-align: center;
+    color: white;
+  margin: 0px 400px;
+  background-color: DimGray;
+font-family: system-ui;
+   border: 0px;
+    border-radius: 36px;
+
+}
+h2 {
+  font-size: 24px;
+    text-align: center;
+    color: white;
+  margin: 0px 500px;
+  background-color: DimGray;
+font-family: system-ui;
+   border: 0px;
+    border-radius: 36px;
+
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(400px, 1fr)); 
+  gap: 20px;
+  justify-content: center; 
+  max-width: 1900px;
+  margin: 0 auto;
+}
+.button8c {
+    padding: 50px 50px;
+    border: 0px;
+    border-radius: 36px;
+    color: buttontext;
+    background-color: BurlyWood;
+    text-align: center;
+    text-decoration: none;
+    margin: 16px 20px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-size: 22px;
+    color: white;
+font-family: system-ui;
+}
+.button8c:hover {
+  background-color: darkgray;
+  color: white;
+}
+.button9c {
+    padding: 50px 50px;
+    border: 0px;
+    border-radius: 36px;
+    color: buttontext;
+    background-color: Gray;
+    text-align: center;
+    text-decoration: none;
+    margin: 16px 20px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-size: 22px;
+    color: white;
+font-family: system-ui;
+}
+.button9c:hover {
+  background-color: darkgray;
+  color: white;
+}
+.button10c {
+    padding: 50px 50px;
+    border: 0px;
+    border-radius: 36px;
+    color: buttontext;
+    background-color: LightSlateGrey;
+    text-align: center;
+    text-decoration: none;
+    margin: 16px 20px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-size: 22px;
+    color: white;
+font-family: system-ui;
+}
+.button10c:hover {
+  background-color: darkgray;
+  color: white;
+}
+.button11c {
+    padding: 50px 50px;
+    border: 0px;
+    border-radius: 36px;
+    color: buttontext;
+    background-color: RebeccaPurple;
+    text-align: center;
+    text-decoration: none;
+    margin: 16px 20px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-size: 22px;
+    color: white;
+font-family: system-ui;
+}
+.button11c:hover {
+  background-color: darkgray;
+  color: white;
+}
+body {
+  /*background-image: url('startpage.jpg');
+  background-repeat: no-repeat;*/
+ background-color: lightgray;
+  font-size: 40px;
+}
+#rippleCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background-color: lightgray;
+  pointer-events: none;
+}
+.button8c,
+.button9c,
+.button10c,
+.button11c {
+  position: relative;
+  overflow: hidden;
+}
+
+.button8c::before,
+.button9c::before,
+.button10c::before,
+.button11c::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2); /* Soft white overlay */
+  transition: top 0.4s ease;
+  z-index: 0;
+}
+.button8c:hover::before,
+.button9c:hover::before,
+.button10c:hover::before,
+.button11c:hover::before {
+  top: 0;
+}
+.button8c,
+.button9c,
+.button10c,
+.button11c {
+  position: relative;
+  z-index: 1;
+}
+.button8c,
+.button9c,
+.button10c,
+.button11c {
+  width: 400px; /* or 300px if you want even wider */
+}
+
+</style>
+</head>
+<body>
+<canvas id="rippleCanvas"></canvas>
+<h1>Вітаємо в біологічному класі!</h1>
+<div class="button-container">
+<ul>
+<button class="button8c button1" onclick="location.href='https://docs.google.com/document/d/1F8PVJuZiARK6xNphscpiAuefGwKHHs1-86jSF4PsHcY/edit?usp=drive_link'">Інформатика 11-І</button>
+<button class="button8c button2" onclick="location.href='https://docs.google.com/document/d/1LblG7KKluLo0qdstEr2_Mye4CwSGzE1Ej6A9-kM89hs/edit?usp=drive_link'">Технології 10-Тт І група</button>
+<button class="button9c button3" onclick="location.href='https://docs.google.com/document/d/1WE0jboRYiqE7Z33L9XUzwWfaJ3LG1_Imrov3TgBYKwQ/edit?usp=drive_link'">Технології 10-Тт ІІ група</button>
+<button class="button10c button4" onclick="location.href='https://docs.google.com/document/d/1llp8QAE4IFgg2icRKcACCBT7200pvvIZUjZ7Hq4uzto/edit?usp=drive_link'">Технології 11-Тт</button>
+</ul>
+</div>
+<br>
+<br>
+<br>
+<br>
+<h2>Автор: Хоменко Є.Р. 2025-2026 рр.</h2>
+<script>
+const canvas = document.getElementById('rippleCanvas');
+const ctx = canvas.getContext('2d');
+
+let ripples = [];
+let lastMouseTime = 0;
+
+
+function createRipple(x, y) {
+  ripples.push({ x, y, radius: 0, alpha: 1 });
+}
+
+function drawRipples() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ripples.forEach((ripple, index) => {
+    ctx.beginPath();
+    ctx.arc(ripple.x, ripple.y, ripple.radius, 0, Math.PI * 2);
+    ctx.strokeStyle = `rgba(255, 255, 255, ${ripple.alpha})`;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ripple.radius += 0.5;
+    ripple.alpha -= 0.005;
+    if (ripple.alpha <= 0) ripples.splice(index, 1);
+  });
+  requestAnimationFrame(drawRipples);
+}
+
+// 🌧️ Ambient ripples
+setInterval(() => {
+  const x = Math.random() * canvas.width;
+  const y = Math.random() * canvas.height;
+  createRipple(x, y);
+}, 800);
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+// 🖱️ Mouse ripple effect
+document.addEventListener('mousemove', (e) => {
+  const now = Date.now();
+  if (now - lastMouseTime > 150) {
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    createRipple(x, y);
+    lastMouseTime = now;
+  }
+});
+
+
+
+drawRipples();
+</script>
+
+
+</body>
+</html>
