@@ -37,14 +37,16 @@ font-family: system-ui;
 }
 
 .button-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
   padding: 0 10px;
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
 }
+
 
 .button8c {
     padding: 50px 50px;
@@ -180,7 +182,7 @@ width: 100%;
 .button9c,
 .button10c,
 .button11c {
-  width: 400px; /* or 300px if you want even wider */
+  width: 400px;
 }
 
 </style>
