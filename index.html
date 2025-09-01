@@ -1,11 +1,18 @@
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+h1, h2 {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 90%;
+  box-sizing: border-box;
+}
+
 h1 {
   font-size: 70px;
     text-align: center;
     color: white;
-  margin: 0px 400px;
   background-color: DimGray;
 font-family: system-ui;
    border: 0px;
@@ -16,7 +23,6 @@ h2 {
   font-size: 24px;
     text-align: center;
     color: white;
-  margin: 0px 500px;
   background-color: DimGray;
 font-family: system-ui;
    border: 0px;
@@ -30,14 +36,16 @@ font-family: system-ui;
   padding: 40px;
 }
 
-ul {
+.button-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(400px, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 20px;
-  justify-content: center; 
-  max-width: 1900px;
+  padding: 0 10px;
+  width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
 }
+
 .button8c {
     padding: 50px 50px;
     border: 0px;
@@ -136,6 +144,9 @@ body {
 .button11c {
   position: relative;
   overflow: hidden;
+width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
 }
 
 .button8c::before,
@@ -178,12 +189,12 @@ body {
 <canvas id="rippleCanvas"></canvas>
 <h1>Вітаємо в біологічному класі!</h1>
 <div class="button-container">
-<ul>
-<button class="button8c button1" onclick="location.href='https://docs.google.com/document/d/e/2PACX-1vSOloz1lWWTTdxQo5UwlKlUqYIGHdD9OWFnT2sHLwKv7jjFiBnJB87EXpaWqVSQfDurA3-HMGO1W7S_/pub'">Інформатика 11-І</button>
-<button class="button8c button2" onclick="location.href='https://docs.google.com/document/d/e/2PACX-1vRHFtY2luc6Yyl2jtWKnEQjtP2rqW5rp3-E-OnfYDaC471NNStEMZChODBPw25iS-x_GGm_V7k88glz/pub'">Технології 10-Тт І група</button>
-<button class="button9c button3" onclick="location.href='https://docs.google.com/document/d/e/2PACX-1vSr42IGd-1RgWFi62BpkIHu3UJGSmFD5ZPZ95MuXfnkWvevreXszX12YtZ6E2J2zXsjSdv_V3emPW9u/pub'">Технології 10-Тт ІІ група</button>
-<button class="button10c button4" onclick="location.href='https://docs.google.com/document/d/e/2PACX-1vTj9FUw1JzEcpN6KS9mcAMnm0Koj8IS8KEHj_LLkwmSYqc-62RFFHywS-d5X8Vl3Xx9YR5_1nhgKVXu/pub'">Технології 11-Тт</button>
-</ul>
+  <div class="button-grid">
+<button class="button8c button1" onclick="location.href='https://docs.google.com/document/d/1F8PVJuZiARK6xNphscpiAuefGwKHHs1-86jSF4PsHcY/edit?usp=drive_link'">Інформатика 11-І</button>
+<button class="button8c button2" onclick="location.href='https://docs.google.com/document/d/1LblG7KKluLo0qdstEr2_Mye4CwSGzE1Ej6A9-kM89hs/edit?usp=drive_link'">Технології 10-Тт І група</button>
+<button class="button9c button3" onclick="location.href='https://docs.google.com/document/d/1WE0jboRYiqE7Z33L9XUzwWfaJ3LG1_Imrov3TgBYKwQ/edit?usp=drive_link'">Технології 10-Тт ІІ група</button>
+<button class="button10c button4" onclick="location.href='https://docs.google.com/document/d/1llp8QAE4IFgg2icRKcACCBT7200pvvIZUjZ7Hq4uzto/edit?usp=drive_link'">Технології 11-Тт</button>
+</div>
 </div>
 <br>
 <br>
@@ -249,5 +260,4 @@ drawRipples();
 
 
 </body>
-
 </html>
